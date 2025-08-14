@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ - ZeroDistractions</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      max-width: 900px;
+      margin: 80px auto 40px;
+      padding: 0 20px;
+      color: #333;
+    }
+    h1 {
+      color: #4e79a7;
+      text-align: center;
+    }
+    details {
+      margin-bottom: 15px;
+      border: 1px solid #4e79a7;
+      border-radius: 6px;
+      padding: 10px 15px;
+      background: #f5f7fa;
+    }
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1.1em;
+      color: #4e79a7;
+    }
+    a {
+      color: #4e79a7;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+
+<nav style="background: #4e79a7; padding: 10px 20px; position: sticky; top: 0; z-index: 1000;">
+  <div style="max-width: 900px; margin: auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+    <div style="color: white; font-weight: bold; font-size: 20px;">ZeroDistractions</div>
+    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+      <a href="index.html" style="color: white; text-decoration: none;">Accueil</a>
+      <a href="faq.html" style="color: white; text-decoration: none;">FAQ</a>
+      <a href="privacy.html" style="color: white; text-decoration: none;">Confidentialité</a>
+      <a href="mentions-legales.html" style="color: white; text-decoration: none;">Mentions légales</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Bandeau cookies -->
+<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #4e79a7; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; font-family: 'Segoe UI', sans-serif; z-index: 1100;">
+  <div>🍪 Ce site utilise des cookies pour améliorer votre expérience. En poursuivant votre navigation, vous acceptez leur utilisation.</div>
+  <button id="accept-cookies" style="background: #f28e2c; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">Accepter</button>
+</div>
+
+<script>
+  document.getElementById('accept-cookies').onclick = function() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookie-banner').style.display = 'none';
+  };
+  window.onload = function() {
+    if(localStorage.getItem('cookiesAccepted') === 'true') {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  };
+</script>
+
+<h1>Foire aux questions (FAQ)</h1>
+
+<details>
+  <summary>Qu'est-ce que ZeroDistractions ?</summary>
+  <p>ZeroDistractions est une extension Chrome qui vous aide à rester concentré en bloquant les sites distrayants et en suivant votre temps passé en ligne.</p>
+</details>
+
+<details>
+  <summary>Comment installer l'extension ?</summary>
+  <p>Vous pouvez télécharger l'extension depuis la page d'accueil ou depuis le Chrome Web Store si elle y est publiée.</p>
+</details>
+
+<details>
+  <summary>Les données personnelles sont-elles collectées ?</summary>
+  <p>Non, aucune donnée personnelle identifiable n’est collectée. Vos informations restent privées et locales.</p>
+</details>
+
+<details>
+  <summary>Comment désinstaller l'extension ?</summary>
+  <p>Allez dans les paramètres de Chrome, puis dans la section Extensions, et cliquez sur "Supprimer" à côté de ZeroDistractions.</p>
+</details>
+
+</body>
+</html>
