@@ -111,6 +111,24 @@
   </style>
 </head>
 <body>
+
+<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #4e79a7; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; font-family: 'Segoe UI', sans-serif; z-index: 1100;">
+  <div>🍪 Ce site utilise des cookies pour améliorer votre expérience. En poursuivant votre navigation, vous acceptez leur utilisation.</div>
+  <button id="accept-cookies" style="background: #f28e2c; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">Accepter</button>
+</div>
+
+<script>
+  document.getElementById('accept-cookies').onclick = function() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookie-banner').style.display = 'none';
+  };
+  window.onload = function() {
+    if(localStorage.getItem('cookiesAccepted') === 'true') {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  };
+</script>
+
      <nav style="background: #4e79a7; padding: 10px 20px; position: sticky; top: 0; z-index: 1000;">
   <div style="max-width: 900px; margin: auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
     <div style="color: white; font-weight: bold; font-size: 20px;">ZeroDistractions</div>
@@ -170,6 +188,7 @@
 
 </body>
 </html>
+
 
 
 
