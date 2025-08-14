@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>FocusSmart - Tableau de bord</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+    th, td {
+      padding: 8px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      cursor: pointer;
+      background-color: #f0f0f0;
+    }
+    #chartContainer {
+      width: 100%;
+      height: 300px;
+      margin-bottom: 40px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>FocusSmart - Tableau de bord</h1>
+
+  <section class="section">
+    <h2>Temps passé par site</h2>
+    <table id="usageTable">
+      <thead>
+        <tr>
+          <th data-sort="site">Site</th>
+          <th data-sort="time">Temps passé (minutes)</th>
+          <th data-sort="visits">Visites</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section class="section">
+    <h2>Sites bloqués</h2>
+    <ul id="blockedSitesList"></ul>
+  </section>
+
+  <section class="section">
+    <h2>Historique des sessions de concentration</h2>
+    <ul id="sessionHistoryList">Pas encore implémenté</ul>
+  </section>
+
+  <section class="section">
+    <h2>Visualisation du temps passé</h2>
+    <canvas id="timeChart"></canvas>
+  </section>
+
+  <script src="lib/chart.min.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
